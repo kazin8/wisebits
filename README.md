@@ -2,8 +2,9 @@
 
     docker-compose up --build --force-recreate --no-deps
 
-    docker exec -it wisebits_php_1 /bin/bash
-    cd /usr/share/nginx/html/basic && php yii migrate
+    docker-compose exec php bash
+    composer install
+    php yii migrate
 
 ## Доступ к сайту
     http://localhost:8080/index.php?r=video

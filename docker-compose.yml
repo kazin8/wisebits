@@ -9,7 +9,7 @@ services:
     volumes:
         - ./data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - "65432:5432"
   nginx:
     image: nginx:latest
     volumes:
@@ -23,6 +23,7 @@ services:
     build: .
     links:
       - postgres
+    working_dir: /usr/share/nginx/html/basic
     ports:
       - "9000:9000"
     volumes:
